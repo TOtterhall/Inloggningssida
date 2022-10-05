@@ -1,0 +1,92 @@
+
+body {
+    background: rgb(132, 156, 132);
+    font-family: 'Poppins'; 
+    font-size: 24px;
+    
+}
+
+
+
+.container {
+    width: 50rem;
+    height: 30rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    background: white;
+    margin: 50px auto;
+    box-shadow: 0 0 5px black;
+}
+header {
+    height:10rem;
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: row;
+}
+
+.container nav {
+    display: flex;
+    border-bottom: 0.5px solid black;
+}
+
+.container nav > div {
+    flex: 1;
+    padding: 24px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+
+.container nav div.selected {
+    border-bottom: 1px solid blue;
+}
+
+.container > div {
+    padding: 5rem;
+}
+
+.container > div input {
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 3px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.container > div input:focus {
+ border-color: rgb(107, 137, 182);
+}
+
+.container button {
+    background: rgb(117, 117, 196);
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+}
+.container button:hover {
+    opacity: 0.9;
+}
+
+#login, #signup {
+    display: none;
+}
+
+#login.show, #signup.show {
+    display: block;
+}
+
+footer {
+    height:10rem;
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: row;
+}
