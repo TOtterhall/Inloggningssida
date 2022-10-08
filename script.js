@@ -1,51 +1,101 @@
-const loginBtn = document.querySelector(".container nav .login");
-const signupBtn = document.querySelector(".container nav .signup");
+console.log("Hej");
+
+const logInBtn = document.querySelector(".container nav .login");
+const signUpBtn = document.querySelector(".container nav .signup");
 
 const loginSection = document.querySelector(".container #login");
 const signupSection = document.querySelector(".container #signup");
+const inlogedSection = document.querySelector(".container #signout");  
 
-signupBtn.addEventListener("click", function() {
-    signupBtn.classList.add("selected");
-    loginBtn.classList.remove("selected");
+//Switch between Login & Sign up forms//
+signUpBtn.addEventListener("click", function() {
+    signUpBtn.classList.add("selected");
+    logInBtn.classList.remove("selected");
     loginSection.classList.remove("show");
     signupSection.classList.add("show");
+    inlogedSection.classList.remove("show");
 });
 
-loginBtn.addEventListener("click", function() {
-    signupBtn.classList.remove("selected");
-    loginBtn.classList.add("selected");
+logInBtn.addEventListener("click", function() {
+    signUpBtn.classList.remove("selected");
+    logInBtn.classList.add("selected");
     loginSection.classList.add("show");
     signupSection.classList.remove("show");
+    inlogedSection.classList.remove("show");
 });
 
 
-//const gate = document.querySelector(".gate");
-//const text = document.querySelector(".gate p");
-//const form = document.querySelector(".form");
-//const input = document.querySelector("input");
-//const openGateBtn = document.querySelector(".openGateBtn");
-//const walkotBtn = document.querySelector(".walkoutBtn");
+//Usernames and passwords to log in//
 
-//const secretCode = "112233";
+//users
+let objPeople = [
+    {
+        username:"Fredrik",
+        password:"12345"
+    },
+    {
+        username:"Melwin",
+        password:"00000"
+    },
+    {
+        username:"Nellie",
+        password:"33344"
+    },
+    {
+        username:"Tessan",
+        password:"54321"
+    }
+]
 
-//openGateBtn.addEventListener("click", checkCode);
+//login functionality
+function login() {
+let username = document.getElementById("username").value
+let password = document.getElementById("password").value
 
+    for(i = 0; i < objPeople.length; i++) {
+        if(username == objPeople[i].username && password == objPeople[i].
+            password) { 
+            logInSucces();
+            console.log(username + " " + "is logged in")
+            return            
+        }    
+    }
+    logInFail();
+} 
+
+const headingText = document.querySelector("header h1");
+const header = document.querySelector("header");
+const footer = document.querySelector("footer");
+const navBar = document.querySelector(".container nav");
+const MyPage = document.getElementById("signout");
+
+//Function renderSuccesful login
+function logInSucces() {
+    document.querySelector("header h1").innerText= "Inloggad";
+    document.querySelector("header").style.backgroundColor = "green";
+    document.querySelector("footer").style.backgroundColor = "green";
+    document.querySelector(".container nav").style.visibility = "hidden";
+    document.getElementById("login").style.visibility = "hidden";
+    document.getElementById("signup").style.visibility = "hidden";
+    document.getElementById("signout").style.display = "block";
+}
+
+function showhide (isLoggedIn) {
+    var x = document.getElementById("#mypage");
+    if(MyPage.style.display === "none") {
+        MyPage.style.display = "block"; 
+    } else {
+        MyPage.style.display = "none";    
+    }
+}
+
+
+//LoginBtn//
 //Function to check if code is correct
-//function checkCode() { 
-//    if (input.value === secretCode) {
-//        renderSuccessfulUI();
-//    } else {
-//        renderFailUI();
-//    }
-//}
+//LogoutBtn//
+//SignupBtn//
+// users and passwords to log in//
+//MyPage succesfull login//
+//MyPage unsuccesfull login//
 
-//Function renderSuccesful UI
-//function renderSuccessfulUI() {
-//    text.innerText = "MONSTER RUUUUN!!!!";
-//    gate.style.backgroundColor = "red";
-//    form.style.display = document;
-//}
 
-//Function renderFail UI
-
-//Function to reset/walkout
