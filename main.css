@@ -1,27 +1,36 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     background: rgb(132, 156, 132);
     font-family: 'Poppins'; 
-    font-size: 24px;
+    font-size: 24px;  
+    
     
 }
 
-
-
-.container {
-    width: 50rem;
-    height: 30rem;
-    border: 1px solid black;
-    border-radius: 1rem;
-    background: white;
-    margin: 50px auto;
-    box-shadow: 0 0 5px black;
-}
 header {
     height:10rem;
     background-color: blueviolet;
     display: flex;
     flex-direction: row;
+    background-size: cover;
+    background-position: center;
+    font-size:28px;
+    
+}
+
+
+.container {
+    width: 60%;
+    border: 1px solid black;
+    border-radius: 1rem;
+    background: white;
+    margin: 50px auto;
+    box-shadow: 0 0 5px black;
 }
 
 .container nav {
@@ -37,14 +46,12 @@ header {
     cursor: pointer;
 }
 
-
-
 .container nav div.selected {
     border-bottom: 1px solid blue;
 }
 
 .container > div {
-    padding: 5rem;
+    padding: 10rem;
 }
 
 .container > div input {
@@ -63,6 +70,10 @@ header {
  border-color: rgb(107, 137, 182);
 }
 
+.container > div > div {
+    margin-top: 20px;
+}
+
 .container button {
     background: rgb(117, 117, 196);
     width: 100%;
@@ -76,11 +87,11 @@ header {
     opacity: 0.9;
 }
 
-#login, #signup {
-    display: none;
+#login, #signup, #signout {
+    display:none;
 }
 
-#login.show, #signup.show {
+#login.show, #signup.show, #signout.show {
     display: block;
 }
 
