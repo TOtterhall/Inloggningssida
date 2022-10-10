@@ -30,12 +30,12 @@
 
         <!--login form-->
         <div id="login" class="show">
-            <form action="log">
+            <form action="log" id=form>
                 <label for=""> Username</label>
-                <input type="text" id="username">
+                <input type="text" name="username" id="username" >
                 <label for="">Password</label>
-                <input type="id" id="password">
-                <button type="button" onclick="login()" class="walkinBtn">Log in</button>
+                <input type="id" name="" id="password">
+                <button type="button" value= "save" onclick="login()" class="walkinBtn">Log in</button>
             </form>
         </div>
 
@@ -49,14 +49,15 @@
                 <button type="button" onclick="newUser()" class="signupBtn">Sign up</button>
             </form>
         </div>
-
         <!--signout form-->
         <div id="signout">
             <form action="log">
-                <button type="button" onclick="signout()" class="walkoutBtn">Sign out</button>
+                <button type="button" onclick="walkout()" id="walkoutBtn">Sign out</button>
             </form>
-        </div>        
+        </div>     
     </div>
+    
+ 
 
 
 
